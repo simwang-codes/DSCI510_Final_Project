@@ -100,11 +100,38 @@ First, go to this repository’s main page -> Click the green "Code" buttom -> C
 
 Un-zip the downloaded files, open your jupyter notebook in that file's directory, open the notebook named results.ipynb.
 
-Now you are ready to begin installing all dependencies within that notebook, I have prepared all installing functions and other functions for you,
+Now you are ready to begin installing all dependencies
 
-you should follow the order of the notebook, and run each block only once from top to bottom
+You MUST first install all dependencies in your Terminal, open your termnial, and move to the downloaded folder where requirements.txt at,
 
-Make sure you have all the .py files in src folder, and you're using Python 3.10+ and run:
+### 1. Create and activate the conda environment
+
+```bash
+conda create -n rag_env python=3.9 -y
+conda activate rag_env
+```
+
+### 2. Upgrade pip and essential build tools
+
+```bash
+pip install --upgrade pip setuptools wheel
+```
+
+### 3. Install core packages via conda
+
+```bash
+conda install -c conda-forge faiss-cpu pyarrow -y
+```
+
+### 4. Install Python dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Then open jupyter notebook, open results.ipynb
+
+Now run the first block in jupyter notebook:
 
 ```bash
 import sys
@@ -112,6 +139,8 @@ import os
 sys.path.append(os.path.join(os.getcwd(), 'src'))
 !pip install -r requirements.txt
 ```
+
+You might need to restart the notebook after running this block.
 
 ### 2. Data Collection and Cleaning
 
