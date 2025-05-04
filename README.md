@@ -94,17 +94,21 @@ In short, this RAG chatbot framework can power intelligent, conversational syste
 
 This project includes both visual analysis and a RAG chatbot based on Wikipedia data for 337 highly rated video games. Below are the steps to reproduce the entire pipeline and interact with the chatbot.
 
-### 1. Downloading Code Zip
+### 1. Downloading Code zip
 
 First, go to this repository’s main page -> Click the green "Code" buttom -> Click Download ZIP
 
+### 2. Get your own OpenAI API KEY!
 
-### 2. Create and activate the conda environment
+Get your OpenAI API Key at: https://platform.openai.com/api-keys
+Then copy your API Key into config.py in downloaded src/ folder
+
+### 3. Create and activate the conda environment
 
 You MUST run this in Conda environment, this means that every time you try to re-run this project after you closed your terminal,
 you have to follow the steps below again.
 
-Open your terminal, move into the downloaded file's directory,
+Open your terminal, cd to the downloaded file's directory DSCI510_Final_Project
 then run command below in your terminal:
 
 ```bash
@@ -112,19 +116,19 @@ conda create -n rag_env python=3.9 -y
 conda activate rag_env
 ```
 
-### 2. Upgrade pip and essential build tools
+### 4. Upgrade pip and essential build tools
 
 ```bash
 pip install --upgrade pip setuptools wheel
 ```
 
-### 3. Install core packages via conda
+### 5. Install core packages via conda
 
 ```bash
 conda install -c conda-forge faiss-cpu pyarrow -y
 ```
 
-### 4. Install Python dependencies
+### 6. Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -143,7 +147,7 @@ sys.path.append(os.path.join(os.getcwd(), 'src'))
 
 You might need to restart the notebook after running this block.
 
-### 2. Data Collection and Cleaning
+### 1. Data Collection and Cleaning
 
 This step scrapes a Wikipedia table and follows publisher hyperlinks to extract their headquarters. It outputs a cleaned CSV used in the visual analysis.
 
@@ -152,7 +156,7 @@ from get_table_HQ import get_best_games_table
 get_best_games_table()
 ```
 
-### 3. Visualization
+### 2. Visualization
 
 Run the following functions to visualize the cleaned data:
 
@@ -170,7 +174,7 @@ plot_games_by_5year_period()
 plot_games_by_platform()
 ```
 
-### 4. Text Corpus Scraping (game descriptions)
+### 3. Text Corpus Scraping (game descriptions)
 
 This step scrapes the Wikipedia pages for each game and saves them into a single `.txt` file.
 
@@ -180,7 +184,7 @@ games = extract_game_links_and_genres(limit=337)
 save_to_txt(games, output_file="game.txt")
 ```
 
-### 5. Chunking, Tagging, and Indexing
+### 4. Chunking, Tagging, and Indexing
 
 Split the text file into chunks, extract tags with KeyBERT, and store everything in an SQLite database and FAISS vector index.
 
@@ -205,7 +209,7 @@ docs = load_all_from_db()
 build_faiss_index(docs)
 ```
 
-### 6. Run the Chatbot (Streamlit UI)
+### 5. Run the Chatbot (Streamlit UI)
 
 The chatbot uses Streamlit to provide an interactive interface. Launch it with:
 
