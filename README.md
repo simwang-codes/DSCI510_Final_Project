@@ -264,4 +264,4 @@ Then it should be working!
 - `faiss_index`: FAISS index file for semantic search
 
 ## Thank you very much for testing my project!
-## Author: Sim Wang
+## Author: Sim Wang DSCI510
