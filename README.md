@@ -96,10 +96,13 @@ This project includes both visual analysis and a RAG chatbot based on Wikipedia 
 
 ### 1. Install Dependencies
 
-Make sure you're using Python 3.10+ and run:
+Make sure you have all the .py files in src folder, and you're using Python 3.10+ and run:
 
 ```bash
-pip install -r requirements.txt
+import sys
+import os
+sys.path.append(os.path.join(os.getcwd(), 'src'))
+!pip install -r requirements.txt
 ```
 
 ### 2. Data Collection and Cleaning
