@@ -239,9 +239,13 @@ subprocess.run(
 You can then ask any question related to the 337 games. The chatbot will retrieve relevant text chunks and generate answers using GPT-4.
 
 If this block doesn’t work for you:
+
 (1) Open your terminal
+
 (2) Move to the src folder where app.py located at
+
 (3) Enter: streamlit run app.py
+
 Then it should be working!
 
 ### API Keys Required
