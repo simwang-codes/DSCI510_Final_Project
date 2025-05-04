@@ -94,17 +94,18 @@ In short, this RAG chatbot framework can power intelligent, conversational syste
 
 This project includes both visual analysis and a RAG chatbot based on Wikipedia data for 337 highly rated video games. Below are the steps to reproduce the entire pipeline and interact with the chatbot.
 
-### 1. Install Dependencies
+### 1. Downloading Code Zip
 
 First, go to this repository’s main page -> Click the green "Code" buttom -> Click Download ZIP
 
-Un-zip the downloaded files, open your jupyter notebook in that file's directory, open the notebook named results.ipynb.
 
-Now you are ready to begin installing all dependencies
+### 2. Create and activate the conda environment
 
-You MUST first install all dependencies in your Terminal, open your termnial, and move to the downloaded folder where requirements.txt at,
+You MUST run this in Conda environment, this means that every time you try to re-run this project after you closed your terminal,
+you have to follow the steps below again.
 
-### 1. Create and activate the conda environment
+Open your terminal, move into the downloaded file's directory,
+then run command below in your terminal:
 
 ```bash
 conda create -n rag_env python=3.9 -y
