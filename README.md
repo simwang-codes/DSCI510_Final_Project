@@ -218,7 +218,9 @@ build_faiss_index(docs)
 
 The chatbot uses Streamlit to provide an interactive interface
 If you are new to the Streamlit UI, running the code below may prompt you to enter your email or skip it
+
 However, Jupyter Notebook does not allow direct input for this prompt
+
 Therefore, I built the code below to help you automatically skip this step when using Jupyter Notebook
 
 Launch it with:
