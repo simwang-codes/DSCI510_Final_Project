@@ -158,6 +158,7 @@ get_best_games_table()
 
 ### 2. Visualization
 
+This may take somtime to run if this is the first time your computer run things in conda environment
 Run the following functions to visualize the cleaned data:
 
 ```python
