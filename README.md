@@ -189,30 +189,39 @@ save_to_txt(games, output_file="game.txt")
 
 Split the text file into chunks, extract tags with KeyBERT, and store everything in an SQLite database and FAISS vector index.
 
-Note: This requires a valid OpenAI API key. You must provide it in `config.py`:
-
-```python
-# config.py (do not commit to GitHub)
-OPENAI_API_KEY = "your-api-key-here"
-DB_PATH = "game.db"
-```
+Make sure you already put your OpenAI API key in src/config.py
 
 Then run:
 
 ```python
 from rag import (
-    file_to_db, load_all_from_db,
-    build_faiss_index
+    detect_file_type,
+    extract_text,
+    split_text_into_chunks,
+    generate_chinese_tags,
+    create_db,
+    file_to_db,
+    load_all_from_db,
+    build_faiss_index,
+    load_vector_storage,
+    search_similar_chunks,
+    answer_question_with_prompt
 )
 
 file_to_db("game.txt")  # This step may take ~30 minutes with KeyBERT
+
 docs = load_all_from_db()
 build_faiss_index(docs)
 ```
 
 ### 5. Run the Chatbot (Streamlit UI)
 
-The chatbot uses Streamlit to provide an interactive interface. Launch it with:
+The chatbot uses Streamlit to provide an interactive interface
+If you are new to the Streamlit UI, running the code below may prompt you to enter your email or skip it
+However, Jupyter Notebook does not allow direct input for this prompt
+Therefore, I built the code below to help you automatically skip this step when using Jupyter Notebook
+
+Launch it with:
 
 ```python
 import subprocess
@@ -247,3 +256,6 @@ Then it should be working!
 - `game.txt`: Full Wikipedia text of 337 games
 - `game.db`: SQLite database storing chunked text and tags
 - `faiss_index`: FAISS index file for semantic search
+
+## Thank you very much for testing my project!
+## Author: Sim Wang
