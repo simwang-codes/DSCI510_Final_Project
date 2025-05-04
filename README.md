@@ -96,6 +96,14 @@ This project includes both visual analysis and a RAG chatbot based on Wikipedia 
 
 ### 1. Install Dependencies
 
+First, go to this repository’s main page -> Click the green "Code" buttom -> Click Download ZIP
+
+Un-zip the downloaded files, open your jupyter notebook in that file's directory, open the notebook named results.ipynb.
+
+Now you are ready to begin installing all dependencies within that notebook, I have prepared all installing functions and other functions for you,
+
+you should follow the order of the notebook, and run each block only once from top to bottom
+
 Make sure you have all the .py files in src folder, and you're using Python 3.10+ and run:
 
 ```bash
